@@ -20,8 +20,22 @@ def search_movies_by_name():
         print('No movie found.')
 
 def search_movies_by_cast():
-    pass
+    search_term = input("Enter a cast member's name to search: ").lower()
+    matching_movies = []
 
+    for movie in movies._movies:
+        for cast_member in movie['cast']:
+            if search_term in cast_member.lower():
+                matching_movies.append([cast_member, movie['name']])
+                break
+
+    if matching_movies:
+        print('Movies by cast member: ')
+        for entry in matching_movies:
+            print(entry[1])
+            print(entry[0])
+    else:
+        print('No movie found by cast member')
 
 def menu():
     while True:
