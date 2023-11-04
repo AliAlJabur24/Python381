@@ -26,13 +26,14 @@ def search_movies_by_cast():
     for movie in movies._movies:
         for cast_member in movie['cast']:
             if search_term in cast_member.lower():
-                matching_movies.append(movie['name'])
+                matching_movies.append([cast_member, movie['name']])
                 break
 
     if matching_movies:
         print('Movies by cast member: ')
-        for movie_name in matching_movies:
-            print(movie_name)
+        for entry in matching_movies:
+            print(entry[1])
+            print(entry[0])
     else:
         print('No movie found by cast member')
 
