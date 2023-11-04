@@ -9,7 +9,15 @@ def print_all_movie_names():
         print(movie['name'])
 
 def search_movies_by_name():
-    pass
+    search_term = input("Movie Name: ").lower()
+    matching_movies = [name for name in MovieNames if search_term in name.lower()]
+
+    if matching_movies:
+        print('Movies Found:')
+        for movie in matching_movies:
+            print(movie)
+    else:
+        print('No movie found.')
 
 def search_movies_by_cast():
     pass
