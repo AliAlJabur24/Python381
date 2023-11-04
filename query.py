@@ -2,15 +2,18 @@ from movies import Movies
 
 movies = Movies('./movies.txt')
 
+MovieNames = [x['name'].lower() for x in movies._movies]
 
 def print_all_movie_names():
-    print("All movie names:")
+    for movie in movies._movies:
+        print(movie['name'])
 
 def search_movies_by_name():
-    print("Search movies by name:")
+    pass
 
 def search_movies_by_cast():
-    print("Search movies by cast:")
+    pass
+
 
 def menu():
     while True:
